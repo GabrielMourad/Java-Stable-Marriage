@@ -11,9 +11,9 @@ public class App {
 
     int N = scan.nextInt();
 
-    int[][] mL = new int[N][N];
-    int[][] wL = new int[N][N];
-    int[][] engagement = new int[N][2];
+    int[][] mL = new int[N][N]; //men's list
+    int[][] wL = new int[N][N]; // women's list
+    int[][] engagement = new int[N][2]; 
 
     setUpArrays(mL, wL, engagement, scan, file);
     printArr(mL);
@@ -70,12 +70,15 @@ public class App {
           if (ranking(w, womenIndex, currMan) > ranking(w, womenIndex, potentialMan)) { // ex: 1 is greater than 2
                                                                                         // ranking wise, so we don't
                                                                                         // continue
-            System.out.println("W" + women + " for M" + potentialMan);
+            System.out.println("Instablity: M"+potentialMan + ": W"+women);
             swapPartners(potentialMan, currMan, women, engagements);
             swaps++;
+            i = 0;
 
             break; // moves to the next guy after swap
           }
+          
+          
 
         } else {
           System.out.println("Engaged");
